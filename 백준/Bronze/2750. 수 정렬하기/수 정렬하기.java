@@ -1,4 +1,3 @@
-
 import java.util.*;
 import java.io.*;
 
@@ -14,7 +13,10 @@ public class Main {
 		}
 		Arrays.sort(arr);
 		for(int i=0; i<n; i++){
-			System.out.println(arr[i]);
+			bw.write(arr[i]+"\n");
 		}
+		bw.flush();
+		br.close();
+		bw.close();
 	}
 }
