@@ -1,4 +1,3 @@
-
 import java.util.*;
 import java.io.*;
 
@@ -13,10 +12,12 @@ class Main {
 		long[] division = new long[m];
 		st = new StringTokenizer(br.readLine());
 		for (int i = 1; i <= n; i++) {
-			sum[i] += (sum[i - 1] + Integer.parseInt(st.nextToken())) % m; 
-			if (sum[i] == 0) count++;
-			division[(int) sum[i]]++;
+			int num = Integer.parseInt(st.nextToken());
+            sum[i] = sum[i - 1] + num;
 
+            int remainder = (int)((sum[i] % m + m) % m);
+            if (remainder == 0) count++;
+            division[remainder]++;
 		}
 
 		for (int i = 0; i < m; i++) {
